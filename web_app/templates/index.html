@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Phishing Detection System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+                <h1>URL Phishing Detector</h1>
+            </div>
+            <p class="subtitle">AI-Powered Protection Against Phishing URLs</p>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Input Section -->
+            <div class="card input-card">
+                <h2>Analyze URL</h2>
+                <p class="description">Enter a URL below to check if it's a phishing attempt</p>
+                
+                <div class="input-group">
+                    <input 
+                        type="text" 
+                        id="urlInput" 
+                        placeholder="https://example.com" 
+                        class="url-input"
+                    >
+                    <button id="analyzeBtn" class="btn btn-primary">
+                        <span class="btn-text">Analyze</span>
+                        <span class="btn-loader" style="display: none;">
+                            <div class="spinner"></div>
+                        </span>
+                    </button>
+                </div>
+
+                <!-- Example URLs -->
+                <div class="examples">
+                    <p>Try these examples:</p>
+                    <div class="example-buttons">
+                        <button class="btn-example" data-url="https://www.google.com">Legitimate</button>
+                        <button class="btn-example" data-url="http://secure-login-verify.com/account">Suspicious</button>
+                        <button class="btn-example" data-url="http://192.168.1.1/phishing.php">Phishing</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Section -->
+            <div id="resultsSection" class="card results-card" style="display: none;">
+                <div id="resultsContent"></div>
+            </div>
+
+            <!-- Features Section -->
+            <div class="card features-section">
+                <h2>Detection Features</h2>
+                <div class="features-grid">
+                    <div class="feature">
+                        <div class="feature-icon">🔍</div>
+                        <h3>URL Analysis</h3>
+                        <p>Deep analysis of URL structure, length, and patterns</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🧠</div>
+                        <h3>Machine Learning</h3>
+                        <p>Advanced ML algorithms with 95%+ accuracy</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Real-time Detection</h3>
+                        <p>Instant analysis and results</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🔒</div>
+                        <h3>Security First</h3>
+                        <p>Protect yourself from phishing attacks</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2024 URL Phishing Detection System. Built with Machine Learning.</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
